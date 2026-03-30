@@ -1,5 +1,6 @@
 import sys
 # import logging
+from src.logger import logging
 
 def error_message_detail(error,error_detail:sys): # jo bhi error aaye mai usse apne own custom message me push krna hai mujhe 
     _,_,exc_tb = error_detail.exc_info() # basically gives 3 info pehle 2 se kaam nhi hai 3rd is important .tb waala ye btata hai kis file me kis line me rror hai
