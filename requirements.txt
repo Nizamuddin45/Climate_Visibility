@@ -1,0 +1,33 @@
+# database-connect
+matplotlib
+seaborn
+boto3
+botocore-stubs
+dill
+dnspython
+# evidently==0.1.59.dev0
+fastapi
+from-root
+httptools
+imblearn
+mypy-boto3-s3
+pip-chill
+pymongo
+jinja2
+python-dotenv
+PyYAML
+types-s3transfer
+uvicorn
+watchfiles
+websockets
+wincertstore
+kneed
+xgboost
+python-multipart
+neuro_mf
+numba
+numpy
+python-dotenv
+pandas
+flask
+-e .
