@@ -30,4 +30,5 @@ numpy
 python-dotenv
 pandas
 flask
+streamlit
 -e .
