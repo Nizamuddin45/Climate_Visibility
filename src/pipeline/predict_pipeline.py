@@ -11,10 +11,26 @@ class PredictPipeline():
         try:
             model_path = 'artifacts/model.pkl'
             preprocessor_path = 'artifacts/preprocessor.pkl'
+
             model = load_object(file_path=model_path)
             preprocessor = load_object(file_path=preprocessor_path)
-            data_scaled  = preprocessor.transform(features) 
+
+            
+            print("========== INPUT ==========")
+            print(features)
+            print("Columns:", features.columns)
+
+            data_scaled  = preprocessor.transform(features)
+
+            print("========== SCALED ==========")
+            print(data_scaled)
+            
+
             preds = model.predict(data_scaled)
+
+            print("========== PREDICTION ==========")
+            print(preds)
+
             return preds
 
         except Exception as e:

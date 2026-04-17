@@ -40,7 +40,7 @@ class ModelTrainer:
             )
 
             models = {
-                "Random Forest": RandomForestRegressor(),
+                "Random Forest": RandomForestRegressor(random_state=42),
                 "Decision Tree": DecisionTreeRegressor(),
                 "Gradient Boosting": GradientBoostingRegressor(),
                 "Linear Regression": LinearRegression(),
@@ -54,7 +54,9 @@ class ModelTrainer:
                     'criterion': ['squared_error', 'friedman_mse', 'absolute_error']
                 },
                 "Random Forest": {
-                    'n_estimators': [50, 100, 200]
+                    'n_estimators': [100, 200,300],
+                    'max_depth':[5,10,15],
+                    'min_samples_split':[2,5,10]
                 },
                 "Gradient Boosting": {
                     'learning_rate': [0.1, 0.05],
@@ -64,12 +66,12 @@ class ModelTrainer:
                 "Linear Regression": {},
                 "XGBRegressor": {
                     'learning_rate': [0.1, 0.05],
-                    'n_estimators': [50, 100]
+                    'n_estimators': [100,200]
                 },
                 "CatBoost": {
                     'depth': [6, 8],
                     'learning_rate': [0.01, 0.05],
-                    'iterations': [50, 100]
+                    'iterations': [100,200]
                 },
                 "AdaBoost": {
                     'learning_rate': [0.1, 0.05],
