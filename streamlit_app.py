@@ -74,14 +74,34 @@ if st.button("Predict"):
             # ONLY VALUE (clean output)
             st.markdown(
                 f"""
-                <h1 style="
-                    text-align:center;
-                    color:#00ffcc;
-                    font-size:50px;
-                    font-weight:bold;
-                    margin-top:30px;">
-                    {pred} km
-                </h1>
+                <div style="
+                    display:flex;
+                    justify-content:center;
+                    align-items:center;
+                    margin-top:40px;
+                ">
+                    <div style="
+                        background: linear-gradient(135deg, #000000, #2c2c2c);
+                        padding:30px 60px;
+                        border-radius:20px;
+                        box-shadow: 0px 0px 25px rgba(0,255,200,0.6);
+                        text-align:center;
+                    ">
+                        <p style="
+                            color:#aaaaaa;
+                            font-size:18px;
+                            margin-bottom:5px;">
+                            Predicted Visibility
+                        </p>
+                        <h1 style="
+                            color:#00ffcc;
+                            font-size:55px;
+                            font-weight:bold;
+                            margin:0;">
+                            {pred} km
+                        </h1>
+                    </div>
+                </div>
                 """,
                 unsafe_allow_html=True
             )
