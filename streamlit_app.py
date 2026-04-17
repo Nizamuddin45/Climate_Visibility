@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 from src.pipeline.predict_pipeline import PredictPipeline, CustomData
 
+# Background + UI styling
 st.markdown("""
     <style>
     .stApp {
@@ -49,9 +50,8 @@ time = st.time_input("Select Time")
 # Prediction
 if st.button("Predict"):
     try:
-        # Ensure inputs are filled
         if None in [temp, humidity, wind_speed, wind_dir, pressure]:
-            st.warning("Please fill all input fields")
+            st.warning("Please fill all inputs")
         else:
             data = CustomData(
                 DRYBULBTEMPF=temp,
@@ -71,17 +71,24 @@ if st.button("Predict"):
 
             pred = round(result[0], 2)
 
-         
+            # ONLY VALUE (clean output)
             st.markdown(f"""
                 <div style="
-                    background-color:#000000;
-                    padding:25px;
-                    border-radius:15px;
+                    background: linear-gradient(135deg, #000000, #434343);
+                    padding:30px;
+                    border-radius:20px;
                     text-align:center;
-                    margin-top:25px;">
+                    margin-top:30px;
+                    box-shadow: 0px 0px 20px rgba(0,255,200,0.5);
+                ">
                     
-                    <h1 style="color:#00ffcc;">Visibility</h1>
-                    <h2 style="color:white;">{pred} km</h2>
+                    <h1 style="
+                        color:#00ffcc;
+                        font-size:50px;
+                        font-weight:bold;">
+                        {pred} km
+                    </h1>
+
                 </div>
             """, unsafe_allow_html=True)
 
