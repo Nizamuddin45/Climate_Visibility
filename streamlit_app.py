@@ -72,25 +72,19 @@ if st.button("Predict"):
             pred = round(result[0], 2)
 
             # ONLY VALUE (clean output)
-            st.markdown(f"""
-                <div style="
-                    background: linear-gradient(135deg, #000000, #434343);
-                    padding:30px;
-                    border-radius:20px;
+            st.markdown(
+                f"""
+                <h1 style="
                     text-align:center;
-                    margin-top:30px;
-                    box-shadow: 0px 0px 20px rgba(0,255,200,0.5);
-                ">
-                    
-                    <h1 style="
-                        color:#00ffcc;
-                        font-size:50px;
-                        font-weight:bold;">
-                        {pred} km
-                    </h1>
-
-                </div>
-            """, unsafe_allow_html=True)
+                    color:#00ffcc;
+                    font-size:50px;
+                    font-weight:bold;
+                    margin-top:30px;">
+                    {pred} km
+                </h1>
+                """,
+                unsafe_allow_html=True
+            )
 
     except Exception as e:
         st.error(f"Error: {e}")
